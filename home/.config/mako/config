@@ -1,0 +1,15 @@
+# ~/.config/mako/config
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+border-size=2
+border-radius=8
+font=DejaVu Sans 10
+default-timeout=5000
+width=360
+height=120
+margin=10
+padding=12
+anchor=top-right
+icons=1
+max-icon-size=48

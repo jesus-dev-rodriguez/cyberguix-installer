@@ -1,0 +1,79 @@
+/* ~/.config/waybar/style.css */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "DejaVu Sans", "Liberation Sans", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 0.92);
+    color: #cdd6f4;
+    border-bottom: 2px solid rgba(137, 180, 250, 0.45);
+}
+
+#workspaces,
+#window,
+#clock,
+#tray,
+#pulseaudio,
+#network,
+#cpu,
+#memory {
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background: rgba(49, 50, 68, 0.75);
+}
+
+#workspaces button {
+    padding: 0 8px;
+    margin: 2px;
+    color: #a6adc8;
+    background: transparent;
+    border-radius: 6px;
+}
+
+#workspaces button.active {
+    color: #1e1e2e;
+    background: #89b4fa;
+}
+
+#workspaces button.urgent {
+    color: #1e1e2e;
+    background: #f38ba8;
+}
+
+#window {
+    color: #a6adc8;
+}
+
+#clock {
+    color: #f5e0dc;
+    font-weight: bold;
+}
+
+#pulseaudio {
+    color: #a6e3a1;
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
+}
+
+#network {
+    color: #89b4fa;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+#cpu {
+    color: #fab387;
+}
+
+#memory {
+    color: #cba6f7;
+}

@@ -1,0 +1,20 @@
+#!/bin/sh
+# Inicia una sesión de Hyprland con un bus D-Bus de usuario.
+# greetd/tuigreet ejecuta este script después de autenticar a red-mat.
+
+export PATH="$HOME/.guix-profile/bin:/run/current-system/profile/bin:/run/current-system/profile/sbin:$HOME/.local/bin:$PATH"
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+export XDG_DATA_DIRS="/run/current-system/profile/share:/home/red-mat/.local/share/flatpak/exports/share:/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/run/current-system/profile/etc/xdg:/etc/xdg"
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+
+if [ ! -d "$XDG_RUNTIME_DIR" ]; then
+    mkdir -p "$XDG_RUNTIME_DIR" 2>/dev/null || true
+    chmod 700 "$XDG_RUNTIME_DIR" 2>/dev/null || true
+fi
+
+# dbus-run-session crea el bus de sesión y exporta DBUS_SESSION_BUS_ADDRESS
+# para Hyprland y todos sus procesos hijos.
+exec dbus-run-session -- hyprland
